@@ -1,0 +1,5 @@
+. $HOME/dbbatch.sh
+. $DBA/functions.sh
+. $DBA/splex/spxenv.sh
+. $DBA/splex/spxfunctions.sh
+$SP_SYS_PRODDIR/bin/sp_ctrl <<EOF
