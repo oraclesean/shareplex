@@ -1,0 +1,12 @@
+# Calling from the command line for two-node RAC:
+/shared/dbscripts/splex/spxrepair.sh -s sourcespx -t targetspx -l /shared/dbscripts/splex/ \
+-a /shared/dbscripts/splex/spxrepair_header -n node1,node2 -e user@example.com -f admin@example.com
+
+# Calling from cron every 30 minutes
+0,30 * * * * /shared/dbscripts/splex/spxrepair.sh -s sourcespx -t targetspx -l /shared/dbscripts/splex/ \
+-a /shared/dbscripts/splex/spxrepair_header -n node1,node2 -e user@example.com -f admin@example.com
+
+# Run in cron but only if the local node is running sp_cop:
+0,30 * * * * if [ `ps -ef | grep sp_cop | grep -v grep | wc -l` -eq 1 ]; then \
+/shared/dbscripts/splex/spxrepair.sh -s sourcespx -t targetspx -l /shared/dbscripts/splex/ \
+-a /shared/dbscripts/splex/spxrepair_header -n node1,node2 -e user@example.com -f admin@example.com ; fi
