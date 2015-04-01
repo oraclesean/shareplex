@@ -13,6 +13,8 @@ It eliminates hardcoding by accepting command-line parameters or calling environ
 meaning the scripts should be portable across any *nix environment and eliminate the need for you to go in and edit the 
 actual code.
 
+Default Dell scripts are prefixed sp_*. I define custom scripts with the spx* prefix for clarity.
+
 Example configurations are included.
 
 Enjoy!
